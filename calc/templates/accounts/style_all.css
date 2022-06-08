@@ -1,0 +1,138 @@
+<style>
+*{
+margin:0px;
+padding:5px;
+}
+body{
+padding-top:1px;
+}
+.navbar ul{
+list-style:none;
+margin-left:43px;
+} 
+.navbar ul li{
+text-transform: uppercase;
+background-color:rgba(136, 255, 0, 0.753);
+margin: auto;
+color:white;
+text-decoration:none;
+width:270px;
+border:none;
+height:50px;
+line-height:50px;
+text-align:center;
+color:red;
+opacity:0.9;
+float:left;
+font-size:22px;
+position:relative;
+letter-spacing:0.5px; 
+font-family:sans-serif;
+}
+
+
+.navbar ul li:hover a{
+  color:#fff;
+  opacity:0.9;
+}
+
+.navbar ul li:hover{
+  background-color:rgb(128, 36, 0);
+}
+
+.navbar ul ul{
+display:none;
+margin-left:-40px;
+}
+.navbar ul li:hover > ul{
+display:block;
+}
+.navbar ul ul ul{
+margin-left:300px;
+top:0px;
+position:absolute;
+}
+
+input[type=text]{
+   padding:15px;
+   border:none;
+   font-size=16px;
+   font-family:sans-serif;
+}
+button{
+   float:right;
+   background:rgba(136, 255, 0, 0.753);
+   color:white;
+   border-radius:5px 5px 5px 5px;
+   cursor:pointer;
+   position:relative;
+   padding:10px;
+  margin:auto;
+   font-family:sans-serif;
+   border:none;
+   font-size:16px;
+}
+.nav .fa{
+background-color:#000;
+color:#fff;
+width:42px;
+height:42px;
+text-align:center;
+line-height:42px;
+border-radius:50%;
+margin-right:8px;
+}
+.nav:hover{
+curosor:pointer;
+background-color:#fff;
+color:#333;
+}
+.wrap {
+width:350px;
+margin:auto;
+background:#00adee;
+opacity:0.7;
+margin-top:200px;
+padding:5px;
+}
+form {
+padding-top:0px;
+font-family:arial;
+border:none;
+margin:10px;
+}
+h2 {
+text-align:center;
+background:rgba(136, 255, 0, 0.753);
+color:white;
+padding:10px;
+border-radius:10px;
+}
+input {
+padding:10px;
+margin:5px;
+border-radius:5px;
+border:none;
+}
+input[type=text],input[type=email],input[type=number],input[type=password],input[type=decimal] {
+width:90%;
+}
+input[type=submit] {
+width:95%;
+background:rgba(136, 255, 0, 0.753);
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+color:white;
+}
+input[type=submit]:hover{
+background:yellow;
+}
+select {
+padding:16px;
+cursor:pointer;
+margin:5px;
+width:98%;
+border-radius:5px;
+}
+</style>

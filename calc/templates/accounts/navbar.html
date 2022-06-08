@@ -1,0 +1,232 @@
+{% load static %}
+<style>
+    *{
+    margin:0px;
+    padding:5px;
+    }
+    body{
+    padding-top:1px;
+    }
+    .navbar ul{
+    list-style:none;
+    margin-left:20px;
+    } 
+    .navbar ul li{
+    text-transform: uppercase;
+    background-color:rgba(136, 255, 0, 0.753);
+    margin: auto;
+    color:white;
+    text-decoration:none;
+    width:285px;
+    border:none;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    color:red;
+    opacity:0.9;
+    float:left;
+    font-size:22px;
+    position:relative;
+    letter-spacing:0.5px; 
+    font-family:sans-serif;
+    }
+    
+    
+    .navbar ul li:hover a{
+      color:#fff;
+      opacity:0.9;
+    }
+    
+    .navbar ul li:hover{
+      background-color:rgb(128, 36, 0);
+    }
+    
+    .navbar ul ul{
+    display:none;
+    margin-left:-10px;
+    }
+    .navbar ul li:hover > ul{
+    display:block;
+    }
+    .navbar ul ul ul{
+    margin-left:300px;
+    top:0px;
+    position:absolute;
+    }
+    
+    input[type=text]{
+       padding:15px;
+       border:none;
+       font-size=16px;
+       font-family:sans-serif;
+    }
+    button{
+       float:right;
+       background:rgba(136, 255, 0, 0.753);
+       color:white;
+       border-radius:5px 5px 5px 5px;
+       cursor:pointer;
+       position:relative;
+       padding:10px;
+      margin:auto;
+       font-family:sans-serif;
+       border:none;
+       font-size:16px;
+    }
+    .nav .fa{
+    background-color:#000;
+    color:#fff;
+    width:42px;
+    height:42px;
+    text-align:center;
+    line-height:42px;
+    border-radius:50%;
+    margin-right:8px;
+    }
+    .nav:hover{
+    curosor:pointer;
+    background-color:#fff;
+    color:#333;
+    }
+    .wrap {
+    width:350px;
+    margin:auto;
+    background:#00adee;
+    opacity:0.7;
+    margin-top:200px;
+    padding:5px;
+    }
+    form {
+    padding-top:0px;
+    font-family:arial;
+    border:none;
+    margin:10px;
+    }
+    h2 {
+    text-align:center;
+    background:rgba(136, 255, 0, 0.753);
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    }
+    input {
+    padding:10px;
+    margin:5px;
+    border-radius:5px;
+    border:none;
+    }
+    input[type=text],input[type=email],input[type=number],input[type=password],input[type=decimal] {
+    width:90%;
+    }
+    input[type=submit] {
+    width:95%;
+    background:rgba(136, 255, 0, 0.753);
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    }
+    input[type=submit]:hover{
+    background:yellow;
+    }
+    select {
+    padding:16px;
+    cursor:pointer;
+    margin:5px;
+    width:98%;
+    border-radius:5px;
+    }
+    </style>
+
+
+<div class="navbar">
+	{% if user.is_authenticated %}
+<ul>
+<li><a href ="{% static 'index.html' %}">     HOME</a>
+<ul>
+
+<li><a href ="{% url 'feedback' %}" style="text-decoration:none">Give Your Feedback</a></li>
+<li><a href ="{% url 'signout' %}" style="text-decoration:none">Logout</a></li>
+</ul></li>
+{% else %}
+
+<ul>
+<li><a href ="{% static 'index.html' %}">     HOME</a>
+<ul>
+
+<li><a href ="{% url 'signup' %}" style="text-decoration:none">Signup</a></li>
+<li><a href ="{% url 'signin' %}" style="text-decoration:none">signin</a></li>
+
+      </ul>
+</li>
+		{% endif %}
+  
+
+<li><a href ="#"> PREDICTIONS</a>
+<ul>
+<li><a href ="http://127.0.0.1:8000/" style="text-decoration:none">WIN PREDICTION</a></li>
+<li><a href ="{% url 'winWOT' %}" style="text-decoration:none">WIN PREDICTION 2</a></li>
+<li><a href ="{% url 'score' %}" style="text-decoration:none">SCORE PREDICTION</a></li>
+<li><a href ="{% url 'mom' %}" style="text-decoration:none">PLAYER OF THE MATCH</a></li>
+</ul></li>
+
+
+    
+<li>
+    <a href ="#">DASHBOARDS</a>
+        <ul>
+        <li><a href ="{% static 'stats_db.html' %}" style="text-decoration:none">STATS DASHBOARD</a></li>
+        <li><a href ="{% static 'matches_db.html' %}" style="text-decoration:none">MATCHES DASHBOARD</a></li>
+        <li><a href ="{% static 'venue_db.html' %}" style="text-decoration:none">VENUE DASHBOARD</a></li>
+        </ul>
+</li>
+
+<li><a href ="#">DATA ANALYSIS</a>
+    <ul>
+    <li><a href ="{% static 'runs_match.html' %}" style="text-decoration:none">AVG RUNS/MATCH</a></li>
+    <li><a href ="{% static 'wickets_match.html' %}" style="text-decoration:none">AVG WICKETS/MATCH</a></li>
+    <li><a href ="{% static 'runs_orangecap.html' %}" style="text-decoration:none">MOST RUNS IN IPL</a></li>
+    <li><a href ="{% static 'wickets_purplecap.html' %}" style="text-decoration:none">MOST WICKETS IN IPL</a></li>
+    <li><a href ="{% static 'teams_winloss.html' %}" style="text-decoration:none">STATUS OF TEAM</a></li>
+    <li><a href ="{% static 'toss_decision.html' %}" style="text-decoration:none">TOSS DECISION</a></li>
+    <li><a href ="{% static 'match_details.html' %}" style="text-decoration:none">MATCH DETAILS</a></li>
+    </ul>
+</li>
+
+<li><a href ="#">CONTACT US</a>
+<ul>
+<li><a href ="{% static 'cnt.html' %}" style="text-decoration:none">Contact Info</a></li>
+</ul>
+
+
+</ul>
+
+</div>
+
+
+
+
+
+
+{% comment %} <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <img src="{% static 'images/berkan.jpeg' %}" style="width:30px;height:30px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Berkan's Calculator</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <span id="hello-message">Hello, {{request.user}}</span>
+    <span><a href="{% url 'signout' %}">Sign Out</a></span> {% endcomment %}
+
+</nav>

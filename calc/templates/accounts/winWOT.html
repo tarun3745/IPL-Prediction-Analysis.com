@@ -1,0 +1,184 @@
+<body style="background-image: url('/static/cricket_pic17.jpg');
+
+ 
+  background-position: center;
+ 
+  background-size: cover;">
+
+{% extends 'accounts/base.html' %} 
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="style_all.css">
+<link rel="icon" href="/static/cricket icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+*{
+margin:0px;
+padding:5px;
+}
+body{
+padding-top:1px;
+}
+input[type=text]{
+   padding:15px;
+   border:none;
+   font-size=16px;
+   font-family:sans-serif;
+}
+button{
+   float:right;
+   background:rgba(136, 255, 0, 0.753);
+   color:white;
+   border-radius:5px 5px 5px 5px;
+   cursor:pointer;
+   position:relative;
+   padding:10px;
+  margin:auto;
+   font-family:sans-serif;
+   border:none;
+   font-size:16px;
+}
+.nav .fa{
+background-color:#000;
+color:#fff;
+width:42px;
+height:42px;
+text-align:center;
+line-height:42px;
+border-radius:50%;
+margin-right:8px;
+}
+.nav:hover{
+curosor:pointer;
+background-color:#fff;
+color:#333;
+}
+.wrap {
+width:350px;
+margin:auto;
+background:#00adee;
+opacity:0.7;
+margin-top:150px;
+padding:5px;
+}
+form {
+padding-top:0px;
+font-family:arial;
+border:none;
+margin:10px;
+}
+h3 {
+font-weight:bold;
+}
+h2 {
+text-align:center;
+background:rgba(136, 255, 0, 0.753);
+color:white;
+font-size: 25px;
+font-weight:bold;
+padding:10px;
+border-radius:10px;
+}
+input {
+padding:10px;
+margin:5px;
+border-radius:5px;
+border:none;
+}
+input[type=text],input[type=email],input[type=number],input[type=password],input[type=decimal] {
+width:90%;
+}
+input[type=submit] {
+width:95%;
+background:rgba(136, 255, 0, 0.753);
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+color:white;
+}
+input[type=submit]:hover{
+background:yellow;
+}
+select {
+padding:16px;
+cursor:pointer;
+margin:5px;
+width:98%;
+border-radius:5px;
+}
+</style>
+
+
+
+
+<div class="wrap">
+<form method="POST" action="{% url 'add2' %}">
+<h2>WIN PREDICTION (without toss)</h2><br>
+ {% csrf_token %}
+HOME TEAM :
+
+<select name="num1" required>
+<option value ="">HOME TEAM</option>
+<option value ="0">CSK</option>
+<option value ="13">SRH</option>
+<option value ="8">MI</option>
+<option value ="12">RCB</option>
+<option value ="1">DC</option>
+<option value ="2">KKR</option>
+<option value ="5">KXIP</option>
+<option value ="10">RR</option>
+</select>
+AWAY TEAM : 
+<select  name="num2" required>
+<option value="">AWAY TEAM</option>
+<option value ="0">CSK</option>
+<option value ="13">SRH</option>
+<option value ="8">MI</option>
+<option value ="12">RCB</option>
+<option value ="1">DC</option>
+<option value ="2">KKR</option>
+<option value ="5">KXIP</option>
+<option value ="10">RR</option>
+</select>
+
+VENUE : 
+<select name="num4" required>
+<option value="">VENUE</option>
+<option value ="5">MA Chidambaram Stadium, Chennai</option>
+<option value ="0">Eden Gardens, Kolkata</option>
+<option value ="1">Wankhede Stadium, Mumbai</option>
+<option value ="6">Sawai Mansingh Stadium, Jaipur</option>
+<option value ="3">Arun Jaitley Stadium, Delhi</option>
+<option value ="2">M.Chinnaswamy Stadium, Bengaluru</option>
+<option value ="4">Rajiv Gandhi International Stadium, Hyderabad</option>
+<option value ="7">Punjab Cricket Association IS Bindra Stadium, Mohali</option>
+<option value ="40">Dr. Y.S.R ACA-VDCA Cricket Stadium, Visakhapatnam</option>
+</select>
+<br>
+
+
+        
+        BATTING :
+        <select name="num3" required>
+            
+            <option value ="1">HOME TEAM BAT</option>
+            <option value ="0">AWAY TEAM BAT</option>
+        </select>
+<br>
+
+<br>
+<input type ="submit" value="PREDICT">
+
+</form>
+</div>
+<br>
+<h1 style="text-align:center; font-family: 'Times New Roman', Times, serif;font-weight: bold;" >{{result}} </h1>
+
+
+{% endblock %} 

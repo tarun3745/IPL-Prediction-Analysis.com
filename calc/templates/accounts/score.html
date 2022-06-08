@@ -1,0 +1,192 @@
+<body style="background-image: url('/static/cricket_pic15.jpg');
+
+ 
+  background-position: center;
+ 
+  background-size: cover;">
+
+
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="style_all.css">
+<link rel="icon" href="cricket icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+*{
+margin:0px;
+padding:5px;
+}
+body{
+padding-top:1px;
+}
+input[type=text]{
+   padding:15px;
+   border:none;
+   font-size=16px;
+   font-family:sans-serif;
+}
+button{
+   float:right;
+   background:rgba(136, 255, 0, 0.753);
+   color:white;
+   border-radius:5px 5px 5px 5px;
+   cursor:pointer;
+   position:relative;
+   padding:10px;
+  margin:auto;
+   font-family:sans-serif;
+   border:none;
+   font-size:16px;
+}
+.nav .fa{
+background-color:#000;
+color:#fff;
+width:42px;
+height:42px;
+text-align:center;
+line-height:42px;
+border-radius:50%;
+margin-right:8px;
+}
+.nav:hover{
+curosor:pointer;
+background-color:#fff;
+color:#333;
+}
+.wrap {
+width:380px;
+margin:auto;
+background:#00adee;
+opacity:0.7;
+margin-top:150px;
+padding:5px;
+}
+form {
+padding-top:0px;
+font-family:arial;
+border:none;
+margin:10px;
+}
+h3 {
+color:white;
+font-weight:bold;
+}
+h2 {
+text-align:center;
+background:rgba(136, 255, 0, 0.753);
+color:white;
+font-size: 25px;
+font-weight:bold;
+padding:10px;
+border-radius:10px;
+}
+input {
+padding:10px;
+margin:5px;
+border-radius:5px;
+border:none;
+}
+input[type=text],input[type=email],input[type=number],input[type=password],input[type=decimal] {
+width:98%;
+}
+input[type=submit] {
+width:95%;
+background:rgba(136, 255, 0, 0.753);
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
+color:white;
+}
+input[type=submit]:hover{
+background:yellow;
+}
+select {
+padding:16px;
+cursor:pointer;
+margin:5px;
+width:98%;
+border-radius:5px;
+}
+</style>
+
+
+
+
+<div class="wrap">
+<form method="POST" action="{% url 'add3' %}">
+<h2>SCORE PREDICTION</h2><br>
+ {% csrf_token %}
+BATING TEAM :
+
+<select name="num1" required>
+<option value="">BATTING TEAM</option>
+<option value ="Chennai Super Kings">CSK</option>
+<option value ="Sunrisers Hyderabad">SRH</option>
+<option value ="Mumbai Indians">MI</option>
+<option value ="Royal Challengers Bangalore">RCB</option>
+<option value ="Delhi Daredevils">DC</option>
+<option value ="Kolkata Knight Riders">KKR</option>
+<option value ="Kings XI Punjab">KXIP</option>
+<option value ="Rajasthan Royals">RR</option>
+</select>
+BOWLING TEAM : 
+<select  name="num2" required>
+<option value="">BOWLING TEAM</option>
+<option value ="Chennai Super Kings">CSK</option>
+<option value ="Sunrisers Hyderabad">SRH</option>
+<option value ="Mumbai Indians">MI</option>
+<option value ="Royal Challengers Bangalore">RCB</option>
+<option value ="Delhi Daredevils">DC</option>
+<option value ="Kolkata Knight Riders">KKR</option>
+<option value ="Kings XI Punjab">KXIP</option>
+<option value ="Rajasthan Royals">RR</option>
+</select>
+
+VENUE : 
+<select name="VENUE" required>
+<option value="">VENUE</option>
+<option value ="MA Chidambaram Stadium, Chennai">MA Chidambaram Stadium, Chennai</option>
+<option value ="Eden Gardens, Kolkata">Eden Gardens, Kolkata</option>
+<option value ="Wankhede Stadium, Mumbai">Wankhede Stadium, Mumbai</option>
+<option value ="Sawai Mansingh Stadium, Jaipur">Sawai Mansingh Stadium, Jaipur</option>
+<option value ="Arun Jaitley Stadium, Delhi">Arun Jaitley Stadium, Delhi</option>
+<option value ="M.Chinnaswamy Stadium, Bengaluru">M.Chinnaswamy Stadium, Bengaluru</option>
+<option value ="Rajiv Gandhi International Stadium, Hyderabad">Rajiv Gandhi International Stadium, Hyderabad</option>
+<option value ="Punjab Cricket Association IS Bindra Stadium, Mohali">Punjab Cricket Association IS Bindra Stadium, Mohali</option>
+<option value ="Dr. Y.S.R ACA-VDCA Cricket Stadium, Visakhapatnam">Dr. Y.S.R ACA-VDCA Cricket Stadium, Visakhapatnam</option>
+</select>
+
+RUNS SCORED : 
+       <input type="number" placeholder="RUNS SCORED" id="num3" value="num3" name="num3" min="1" max="500" required>
+<br>
+WICKETS FALLEN :
+       <input type="number" placeholder="WICKETS FALLEN" id="num4" value="num4" name="num4" min="0" max="10" required>
+<br>
+CURRENT OVER : 
+       <input type="number" placeholder="CURRENT OVER" id="num5" value="num5" name="num5" min="1" max="20" required>
+<br>
+RUNS SCORED IN LAST 5 OVERS :
+       <input type="number" id="num6" placeholder="RUNS SCORED IN LAST 5 OVERS" value="num6" name="num6" min="1" max="500" required>
+<br>
+WICKETS FALLEN IN LAST 5 OVERS:
+       <input type="number" id="num7" placeholder="WICKETS FALLEN IN LAST 5 OVERS" value="num7" name="num7" min="0" max="10" required>
+<br>
+
+<br>
+<input type ="submit" value="PREDICT">
+</form>
+</div>
+<br><br>
+<h1 style="text-align:center; color: ivory;font-family: 'Times New Roman', Times, serif;font-weight: bold;" >{{result}} </h1>
+
+
+
+
+{% endblock %}

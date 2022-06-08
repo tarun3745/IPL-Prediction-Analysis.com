@@ -1,0 +1,125 @@
+<body style="background-image: url('/static/cricket_login1.jfif');
+
+ 
+  background-position: center;
+ 
+  background-size: cover;">
+{% extends 'accounts/winWOT.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" href="cricket icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+    
+    .wrap {
+    width:auto;
+    margin:auto;
+    background:#00adee;
+    opacity:0.7;
+    margin-top:70px;
+    padding:5px;
+    }
+    form {
+    padding:10px;
+    margin-left: 0%;
+    font-family:arial;
+    width: auto;
+    border:1px dotted white;
+    text-align:center;
+    }
+    h1{
+        text-align:center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    h2 {
+    text-align:center;
+    background:orange;
+    font-size: 25px;
+    font-weight: bold;
+    color:white;
+    padding:10px;
+    border-radius:px;
+    }
+    h4{
+        text-align:center;
+    }
+    input {
+    padding:10px;
+    width: 10px;
+    margin:5px;
+    border-radius:5px;
+    border:none;
+    }
+    input[type=text],input[type=password] {
+    width:20%;
+    }
+    login{
+    width:15%;
+    background:orange;
+    cursor:pointer;
+    font-size:18px;
+    outline: none;
+    font-weight:bold;
+    color:white;
+    }
+    button{
+        margin: 0px 0 0px 0;
+        height: 45px;
+        width: 80px;
+        font-size: 15px;
+        color: white;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+        background: orange;
+        border-radius: 3px;
+        border: 1px solid #3949AB;
+        transition: .5s;
+    }
+    login:hover{
+    background:yellow;
+    }
+    
+    select {
+     padding:10px;
+     width:32%;
+     border-radius:5px;
+    }
+    </style>
+    </head>
+<body>
+<center><img src="/static/cricket icon.png" alt="pic" align="center" height="150px" width="200px"/></center>
+<center><h1 id="m1">PREDICTION ON IPL - INDIAN PREMIRE LEAGUE</h1></center>
+<div class="container">
+<section id="content">
+<h2>LOGIN HERE</h2>
+<form method="POST">
+
+    <div class="wrapper">
+        <i class="fa fa-user"></i>
+                {% csrf_token %}
+                Username : 
+                <input type="text" name="username" placeholder="Username" ></div>
+                <i class="fa fa-lock"></i>
+                Password : 
+                <input type="password" name="password" placeholder="Password">
+                <br>
+                <div><br><button type="submit" name="submit" id="btn" value="login">LOGIN</button></div>
+                <div><h4> Don't have an account?<a  href="{% url 'signup' %}">Sign Up</a></h4></div>
+            </div>
+
+        </div>{{message}}
+    </div>
+
+</form>
+</section>
+</body>
+</html>
+
+{% endblock %}

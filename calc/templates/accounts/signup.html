@@ -1,0 +1,116 @@
+<body style="background-image: url('/static/cricket_pic9.jpg');
+
+ 
+  background-position: center;
+ 
+  background-size: cover;">
+{% extends 'accounts/winWT.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+<link rel="icon" href="cricket icon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    body {
+    background-image:url('cricket_pic9.jpg');
+    background-size:cover;
+    }
+    
+    .wrap {
+    width:350px;
+    height: 528px;
+    margin:auto;
+    background:#00adee;
+    opacity:0.7;
+    margin-top:50px;
+    padding:5px;
+    }
+    form {
+    padding:10px;
+    font-family:arial;
+    border:1px dotted white;
+    margin:10px;
+    }
+    h2 {
+    text-align:center;
+    background:rgba(136, 255, 0, 0.753);
+    color:white;
+    font-size: 25px;
+    font-weight:bold;
+    padding:10px;
+    border-radius:10px;
+    }
+    input {
+    padding:10px;
+    margin:5px;
+    border-radius:5px;
+    border:none;
+    }
+    input[type=text],input[type=email],input[type=password] {
+    width:95%;
+    }
+    input[type=submit] {
+    width:95%;
+    background:rgba(136, 255, 0, 0.753);
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    }
+    input[type=submit]:hover{
+    background:yellow;
+    }
+    select {
+     padding:9.5px;
+    margin:5px;
+     width:29%;
+     border-radius:5px;
+    }
+    </style>
+</head>
+<body>
+<br>
+<div class="wrap">
+    <div class="d-flex justify-content-center h-100">
+        <div class="user_card">
+            <form method="POST" class=" user_card">
+                {% csrf_token %}
+                <h2>NEW USER</h2><br>
+                
+
+                Username : {{formSet.username}}
+                Email : {{formSet.email}}
+                Password : {{formSet.password1}}
+                Confirm Password : {{formSet.password2}}
+                <input type ="submit" name="submit" value="Submit Now" id="submit"> </input>
+                <a class="btn btn-info" href="{%url 'winWT' %}">Cancel</a>
+                {{formSet.errors}}
+            </form>
+            <br>
+            <h5>Already have an account?<a href="{% url 'signin' %}">Sign In</a> </h5>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = 'Username';
+    form_fields[2].placeholder = 'Email';
+    form_fields[3].placeholder = 'Enter Password';
+    form_fields[4].placeholder = 'Re-enter Password';
+
+    for (var field in form_fields) {
+        form_fields[field].className += ' form-control'
+    }
+</script>
+{% endblock %}
